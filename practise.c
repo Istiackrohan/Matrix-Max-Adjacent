@@ -19,7 +19,7 @@ void find_max_sum_cell(int n, int grid[][100])
             if (i > 0)
             {
                 sum += grid[i - 1][j];
-                if (i + 1 > 0) 
+                if (i + 1 < n - 1) 
                     sum += grid[i + 1][j];
             }
             if (i < n - 1)
@@ -35,26 +35,26 @@ void find_max_sum_cell(int n, int grid[][100])
                     sum += grid[i - 1][j - 1];
                 if (i + 1 > 0)
                     sum += grid[i + 1][j - 1];
-                if (j + 1)
+                if (j + 1 < n - 1)
                 {
                     sum += grid[i][j - 1];
                     if (i - 1 > 0)
                         sum += grid[i - 1][j - 1];
-                    if (i + 1 > 0)
+                    if (i + 1 < n - 1)
                         sum += grid[i + 1][j - 1];
                 }
             }
             if (j < n - 1)
             {
                 sum += grid[i][j + 1];
-                if (i + 1 > 0)
+                if (i + 1 < n - 1)
                     sum += grid[i + 1][j + 1];
                 if (i - 1 > 0)
                     sum += grid[i - 1][j + 1];
                 if (j - 1 > 0)
                 {
                     sum += grid[i][j - 1];
-                    if (i + 1 > 0)
+                    if (i + 1 < n - 1)
                         sum += grid[i + 1][j - 1];
                     if (i - 1 > 0)
                         sum += grid[i - 1][j - 1];
